@@ -1,0 +1,112 @@
+/* Mobile lesson preview. Base rules are for a phone, wider layouts extend them. */
+body.mobile-lesson{height:100vh;height:100svh;display:flex;flex-direction:column;overflow:hidden;background:var(--paper)}
+.mobile-lesson .masthead{width:100%;max-width:760px;min-height:54px;padding:7px 16px;gap:12px;flex:none}
+.mobile-lesson .brand{font-size:14px;line-height:1.35}.mobile-lesson .brand small{display:none}
+.mobile-lesson .settings button{min-height:40px;min-width:75px;padding:7px 10px;font-size:14px}
+.mobile-lesson .topnav{position:static;padding:5px 12px;gap:8px;flex:none;box-shadow:none}
+.mobile-lesson .topnav a{min-height:46px;min-width:0;flex:1;max-width:360px;font-size:17px;padding:8px;gap:9px;border-radius:8px}
+.mobile-lesson .topnav .icon{width:22px;height:22px}
+.mobile-lesson #app{display:flex;flex:1;min-height:0;width:100%;max-width:760px;align-self:center}
+.mobile-lesson footer{display:none}
+.mobile-workbook{padding:0 16px;display:flex;flex-direction:column;min-height:0;max-width:none;width:100%;font-size:18px}
+.mobile-lesson-heading{padding:15px 0 12px;flex:none;border-bottom:1px solid var(--line)}
+.mobile-lesson-heading h1{font-size:20px;line-height:1.35;letter-spacing:-.02em;margin:0 0 5px;text-wrap:pretty}
+.mobile-progress{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:14px;color:var(--muted)}
+.mobile-progress>span{font-variant-numeric:tabular-nums}
+.mobile-progress button{border:0;background:transparent;padding:6px 0 6px 12px;min-height:44px;font-size:14px;gap:6px;border-radius:5px}
+.mobile-progress button:hover{background:var(--soft)}
+.mobile-track{display:flex;gap:5px;height:5px;margin-top:1px}
+.mobile-track span{background:var(--line);flex:1;border-radius:3px}.mobile-track .visited{background:var(--accent)}
+.lesson-stage{padding:20px 0 16px;flex:1;min-height:0;overflow:auto;overscroll-behavior:contain;scrollbar-gutter:stable}
+.stage-heading{display:flex;align-items:center;gap:10px;margin-bottom:12px}.stage-heading h2{font-size:24px;line-height:1.3;margin:0;text-wrap:pretty;letter-spacing:-.015em}
+.stage-heading h2:focus{outline:none}.stage-icon{display:grid;place-items:center;background:var(--tint);color:var(--accent);width:44px;height:44px;border-radius:12px;flex:none}.stage-icon .icon{width:25px;height:25px}
+.stage-instruction{font-size:18px;line-height:1.6;margin:0 0 20px;max-width:48ch}
+.stage-figure{margin:0 0 14px}.screen-window{display:flex;align-items:center;justify-content:center;width:100%;padding:0;border:1px solid var(--line);border-radius:14px;background:#f8f9fa;overflow:hidden;min-height:0}
+.screen-window:hover{background:#f8f9fa;border-color:var(--accent)}.screen-window svg{display:block;width:100%;height:auto;max-height:225px}
+.stage-figure figcaption{display:flex;align-items:center;justify-content:center;gap:7px;font-size:13px;line-height:1.5;color:var(--muted);padding:8px 0 0}.stage-figure figcaption .icon{width:16px;height:16px}
+.stage-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}.stage-actions>button,.stage-actions>.button{flex:1;min-width:135px;font-size:16px;min-height:52px;padding:11px 12px}
+.stage-prompt{margin:0;background:var(--soft);border-radius:12px;padding:19px 18px;font-size:19px;line-height:1.75;overflow-wrap:anywhere;white-space:pre-wrap}
+.stage-tips{list-style:none;padding:0;margin:26px 0 18px;border-block:1px solid var(--line)}.stage-tips li{display:flex;align-items:flex-start;gap:12px;padding:18px 0;font-size:17px;line-height:1.6}.stage-tips li+li{border-top:1px solid var(--line)}.stage-tips .icon{color:var(--accent);margin-top:3px}
+.stage-note{display:flex;gap:8px;font-size:15px;line-height:1.6;color:var(--muted);margin:12px 0}.stage-note .icon{margin-top:2px}
+.mobile-controls{display:grid;grid-template-columns:1fr 1.55fr;gap:12px;flex:none;border-top:1px solid var(--line);padding:12px 0 max(12px,env(safe-area-inset-bottom));background:var(--paper)}
+.mobile-controls button{width:100%;min-height:56px;font-size:18px;padding:12px 14px}
+.mobile-lesson #notice:not(:empty){bottom:94px;font-size:16px;line-height:1.5;width:calc(100% - 32px);max-width:520px;padding:12px 16px;border-radius:10px;pointer-events:none}
+#mobile-dialog{padding:0;border:0;border-radius:16px;background:var(--paper);color:var(--ink);width:calc(100% - 24px);max-width:620px;max-height:calc(100svh - 24px);overscroll-behavior:contain}
+#mobile-dialog::backdrop{background:#122936a8}#mobile-dialog header{display:flex;align-items:center;justify-content:space-between;gap:12px;position:sticky;top:0;background:var(--paper);padding:12px 16px;border-bottom:1px solid var(--line);z-index:1}
+#mobile-dialog h2{font-size:19px;margin:0}#close-mobile-dialog{min-height:44px;padding:8px 12px;font-size:15px;flex:none}#mobile-dialog-content{padding:16px;font-size:18px}
+.overview-list{list-style:none;margin:0;padding:0}.overview-list li{border-bottom:1px solid var(--line)}.overview-list button{border:0;border-radius:0;width:100%;display:flex;justify-content:flex-start;text-align:left;gap:12px;min-height:62px;padding:12px 8px;font-size:18px;font-weight:600}.overview-list button>span{display:grid;place-items:center;width:30px;height:30px;flex:none;background:var(--soft);border-radius:50%;font-size:15px}.overview-list button[aria-current=step]{background:var(--tint)}
+.original-notes{font-size:17px}.original-notes>ol{padding-left:24px;font-size:17px}.original-notes li{margin:18px 0}.original-notes .meta{font-size:14px}
+.mini-practice{font-size:17px}.practice-example{background:var(--soft);padding:14px;border-radius:10px;font-size:16px;line-height:1.5;margin-bottom:10px}.mini-practice>button{min-height:46px;font-size:16px;padding:9px 14px}.mini-practice label{display:block;margin:16px 0 8px;font-weight:650}.mini-practice textarea{display:block;width:100%;font:inherit;border:1px solid var(--muted);border-radius:10px;padding:10px;min-height:90px;resize:vertical}.mini-practice form>button{width:100%;min-height:48px;font-size:16px;margin-top:10px}.mini-practice #mobile-result:not(:empty),#quiz-feedback:not(:empty){padding:12px;background:var(--soft);margin:12px 0 0;line-height:1.5}.mini-quiz>button{width:100%;text-align:left;justify-content:flex-start;font-size:17px;margin-bottom:12px}
+@media(min-width:600px){.mobile-lesson .masthead{padding:10px 24px;min-height:60px}.mobile-lesson .brand{font-size:17px}.mobile-workbook{padding:0 28px}.mobile-lesson-heading{padding-top:20px}.mobile-lesson-heading h1{font-size:24px}.lesson-stage{padding:26px 0 20px}.stage-heading h2{font-size:29px}.stage-instruction{font-size:20px}.screen-window svg{max-height:290px}.stage-figure{max-width:560px}.stage-actions{max-width:560px}.stage-prompt{font-size:21px;max-width:600px}}
+@media(max-height:700px) and (max-width:599px){.mobile-lesson .masthead{min-height:48px;padding-block:4px}.mobile-lesson .topnav a{min-height:44px}.mobile-lesson-heading{padding:10px 0}.mobile-lesson-heading h1{font-size:19px;margin-bottom:0}.mobile-progress button{min-height:40px}.lesson-stage{padding-top:14px}.stage-heading{margin-bottom:10px}.stage-heading h2{font-size:22px}.stage-instruction{margin-bottom:14px}.screen-window svg{max-height:160px}.stage-actions{margin-top:12px}.stage-prompt{padding:14px 16px;font-size:18px;line-height:1.6}.mobile-controls{padding-top:9px;padding-bottom:max(9px,env(safe-area-inset-bottom))}.mobile-controls button{min-height:52px}.stage-tips{margin-top:18px}.stage-tips li{padding:14px 0}}
+@media print{body.mobile-lesson{height:auto;overflow:visible;display:block}.mobile-lesson #app,.mobile-workbook{display:block}.mobile-controls,.mobile-progress,.mobile-track{display:none}.lesson-stage{overflow:visible}.mobile-lesson .lesson-stage,.mobile-lesson .stage-prompt{display:block!important}}
+.mobile-workbook{margin:0;flex:1}
+.stage-actions:has(>button) .stage-open .icon{display:none}
+.stage-actions>button,.stage-actions>.button{white-space:nowrap}
+.local-reply{margin-top:20px;background:var(--soft);border-radius:12px;padding:20px;line-height:1.6}.local-reply>.icon{color:var(--accent);margin-bottom:8px}.local-reply p{margin-bottom:12px}.local-reply small{color:var(--muted)}
+@media(max-width:359px){.mobile-lesson .brand{font-size:13px}.stage-actions{display:grid;grid-template-columns:1fr 1fr}.stage-actions>button,.stage-actions>.button{min-width:0;padding-inline:8px;font-size:15px}.stage-actions>button{gap:6px}.stage-prompt{font-size:18px;line-height:1.6}.stage-heading h2{font-size:21px}}
+@media(max-height:700px) and (max-width:599px){.stage-note{font-size:14px;margin:8px 0}.stage-figure{margin-bottom:8px}.stage-figure figcaption{padding-top:5px}.stage-instruction{line-height:1.5}.stage-heading{margin-bottom:8px}.mini-practice label{margin-top:12px;font-size:16px}.mini-practice textarea{min-height:70px}.mini-practice form>button{min-height:44px}.mini-practice>button{min-height:44px}.screen-window svg{max-height:135px}}
+.mobile-lesson .settings button,.mobile-progress button{min-height:44px}
+/* Visual guidance stays inline: no image launcher or screenshot modal. */
+.screen-window{cursor:default}.screen-window:hover{border-color:var(--line)}
+.image-highlight{fill:none;stroke:#a94b12;stroke-width:11;stroke-linejoin:round;stroke-linecap:round}
+
+
+.image-stop{fill:none;stroke:#a32324;stroke-width:14;stroke-linecap:round}
+.full-app-figure .screen-window{background:transparent;border:0;border-radius:0}
+.full-app-figure .screen-window svg{width:auto;max-width:100%;height:max(110px,min(210px,calc(100svh - 570px)));max-height:none;border:1px solid var(--line);border-radius:12px;background:#f8f9fa}
+.full-app-figure .image-highlight{stroke-width:20}
+.full-app-figure figcaption{padding-top:5px}
+@media(min-width:600px){.full-app-figure .screen-window svg{height:min(330px,calc(100svh - 450px))}}
+@media(max-height:600px){.full-app-figure .screen-window svg{height:150px}}
+/* Crossing a lesson boundary is an explicit choice, away from the Next thumb position. */
+.mobile-controls .review-lesson{background:var(--tint);color:var(--accent);border-color:var(--accent)}
+.mobile-controls .review-lesson:hover{background:var(--highlight)}
+.lesson-boundary{padding:4px 0 12px}.boundary-symbol{display:grid;place-items:center;width:62px;height:62px;border-radius:14px;background:var(--tint);color:var(--accent);margin-bottom:18px}.boundary-symbol .icon{width:34px;height:34px}
+.lesson-boundary h2{font-size:26px;margin:0 0 12px;line-height:1.3}.lesson-boundary>p{font-size:18px;line-height:1.6;margin-bottom:22px}.lesson-boundary .button{width:100%;min-height:56px;font-size:17px}
+.start-next-lesson{justify-content:space-between;text-align:left;gap:16px;padding:16px!important}.start-next-lesson>span{display:block;font-size:15px;font-weight:500}.start-next-lesson strong{display:block;font-size:20px;font-weight:700;line-height:1.4;margin-top:5px}.start-next-lesson>.icon{flex:none}
+.boundary-contents{margin-top:14px}.last-lesson-note{padding:16px;background:var(--soft);border-radius:12px}
+@media(max-height:700px){.boundary-symbol{width:48px;height:48px;margin-bottom:12px}.boundary-symbol .icon{width:28px;height:28px}.lesson-boundary h2{font-size:23px}.lesson-boundary>p{margin-bottom:16px}.start-next-lesson strong{font-size:18px}}
+
+/* Quota-aware references stay inside the existing one-stage reader. */
+
+.reference-figure{margin:0 0 12px}.reference-figure img{display:block;max-height:215px;max-width:100%;width:auto;height:auto;margin:0 auto;border-radius:16px}.reference-figure figcaption,.poster-reference figcaption{font-size:14px;line-height:1.5;color:var(--muted);margin:8px 0;text-align:center}
+.poster-reference{margin:0 0 12px}.poster-layout{display:flex;flex-direction:column;align-items:center;gap:4px;padding:12px;background:var(--tint);border-radius:16px;max-width:300px;margin:auto;text-align:center;font-size:18px;line-height:1.4}.poster-layout img{display:block;height:110px;width:100%;object-fit:cover;border-radius:10px}.poster-layout strong{font-size:20px}
+.optional-practice{text-align:left;margin:20px 0;padding-top:16px;border-top:1px solid var(--line);font-size:17px}.optional-practice>summary{min-height:48px;cursor:pointer;font-weight:700}.optional-practice h3{font-size:20px;margin:20px 0 12px}.optional-practice p{font-size:17px;line-height:1.6}.optional-practice section{padding-block:12px;border-bottom:1px solid var(--line)}.optional-practice .stage-prompt{font-size:17px}
+@media(max-height:700px) and (max-width:599px){.reference-figure img{max-height:155px}.poster-layout img{height:95px}}
+
+.stage-video{margin:0 0 14px;font-size:16px}.stage-video summary{display:flex;align-items:center;gap:8px;min-height:48px;padding:10px 12px;border:1px solid var(--line);border-radius:10px;cursor:pointer;color:var(--accent);font-weight:650}.stage-video video{display:block;max-height:300px;max-width:100%;width:100%;background:#10252f;margin-top:10px;border-radius:10px}#lesson-stage:has(.stage-video[open])>.stage-figure{display:none}.stage-video ::cue{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;font-size:17px;background:#10252fe8;color:white}@media(max-height:700px){.stage-video video{max-height:190px}}
+.video-instruction{display:none;font-size:18px;line-height:1.6;margin:0 0 20px}#lesson-stage:has(.stage-video[open])>.stage-instruction{display:none}#lesson-stage:has(.stage-video[open])>.video-instruction{display:block}.stage-video video{max-height:220px}@media(max-height:700px){.stage-video video{max-height:190px}.video-instruction{margin-bottom:14px}}
+
+/* The overview shows the sequence without jumping between steps. */
+.overview-list{list-style:decimal;padding-left:28px}.overview-list li{padding:14px 8px;line-height:1.5}.overview-list li[aria-current=step]{font-weight:700;color:var(--accent)}
+
+.output-video video{display:block;width:100%;max-height:55svh;object-fit:contain;background:#111;border-radius:16px}.output-video{margin-inline:0}
+
+.output-video video{height:40svh;max-height:360px}
+
+/* Related practice stays readable above the separate next-lesson action. */
+.similar-activities{padding-left:24px;margin:18px 0 28px;font-size:18px;line-height:1.6}.similar-activities li{padding-left:4px;margin:0 0 16px}.similar-activities li::marker{color:var(--accent)}
+
+/* Approved visual reading layout: short action, real screen, optional demo. */
+.mobile-lesson .masthead{padding:8px 20px;min-height:61px;max-width:760px}.mobile-lesson .brand{font-size:14px;line-height:1.3}.mobile-lesson .settings button{border:0;background:transparent;color:var(--accent);min-height:44px;font-size:14px;padding:8px 0 8px 8px;min-width:65px;font-weight:400}
+.mobile-lesson .topnav{padding:0 20px;gap:28px;height:46px;justify-content:flex-start;background:var(--soft);border-bottom:1px solid var(--line)}.mobile-lesson .topnav a{flex:none;min-height:46px;max-width:none;padding:8px 0;font-size:15px;font-weight:400;border-radius:0}.mobile-lesson .topnav a[aria-current]{font-weight:600;border-bottom:2px solid var(--accent)}
+.mobile-workbook{padding:0 22px}.mobile-lesson-heading{padding:23px 0 10px;border:0}.mobile-lesson-heading h1{font-size:24px;line-height:1.28;letter-spacing:-.025em;margin-bottom:8px}.mobile-progress{font-size:13px}.mobile-progress button{font-size:13px;font-weight:400;min-height:40px}.mobile-progress button .icon{width:18px;height:18px}
+.lesson-stage{padding:14px 0 24px;scrollbar-gutter:auto;scrollbar-width:thin;scrollbar-color:var(--line) transparent}.stage-heading{margin:0 0 12px}.stage-icon{display:none}.stage-heading h2{font-size:22px;line-height:1.35;letter-spacing:-.015em;font-weight:650}.stage-instruction{font-size:18px;line-height:1.65;margin:0 0 22px}.screen-window{background:transparent;border:0;border-radius:0}.screen-window:hover{background:transparent;border:0}.screen-window svg{max-height:320px}.full-app-figure .screen-window svg{max-height:340px}.stage-figure{margin:0 0 22px}.stage-figure figcaption{display:none}.demo-poster img{display:block;width:100%;height:auto;max-height:320px;object-fit:contain}
+.stage-prompt{background:var(--soft);padding:20px;font-size:19px;line-height:1.7;border-radius:10px}.stage-actions{gap:12px;margin-top:18px}.stage-actions>button,.stage-actions>.button{font-size:16px;min-height:48px;padding:10px 14px;font-weight:400}.stage-actions>.stage-open{border:0;background:transparent;color:var(--accent)}.stage-actions>.stage-open>.icon:first-child{display:none}.stage-actions>#mobile-copy{background:white;color:var(--accent);border-color:var(--line)}
+.stage-video{margin:18px 0}.stage-video summary{border:0;border-radius:0;padding:0;font-size:15px;min-height:48px;font-weight:400;justify-content:flex-start}.stage-video summary .icon{width:21px;height:21px}.stage-video video{max-height:280px;border-radius:8px}#lesson-stage:has(.stage-video[open])>.stage-figure{display:none}.video-instruction{font-size:18px;line-height:1.65}
+.mobile-controls{grid-template-columns:1fr 1.55fr;gap:12px;padding:12px 0 max(12px,env(safe-area-inset-bottom));border-color:var(--line)}.mobile-controls button{font-size:16px;min-height:52px;padding:10px 8px;font-weight:400;border-radius:9px}.mobile-controls button>.icon{width:21px;height:21px}.mobile-controls .review-lesson{background:var(--soft);color:var(--accent);border-color:var(--accent)}.mobile-controls button:disabled{opacity:1;background:#f5f5f7;color:#85858c;border-color:#d2d2d7}.mobile-controls button:disabled:hover{background:#f5f5f7}
+.lesson-boundary{padding:0 0 12px}.lesson-boundary h2{font-size:27px;line-height:1.3;letter-spacing:-.025em;margin:0 0 12px}.similar-activities{list-style:none;padding:0;margin:0}.similar-activities li{margin:0;padding:20px 0;border-bottom:1px solid var(--line)}.similar-activities h3{font-size:19px;font-weight:650;line-height:1.4;margin:0 0 7px}.similar-activities p{font-size:18px;line-height:1.65;margin:0}.lesson-boundary .start-next-lesson{margin-top:27px;padding:0 0 20px!important;border:0;border-bottom:1px solid var(--line);border-radius:0;background:transparent;color:var(--accent);font-weight:400;min-height:70px}.start-next-lesson>span{font-size:13px;color:var(--muted)}.start-next-lesson strong{font-size:19px;font-weight:600;line-height:1.4;margin-top:6px;color:var(--accent)}.lesson-boundary .boundary-contents{justify-content:flex-start;width:auto;font-size:15px;min-height:48px;margin-top:10px;padding:0;border:0;background:transparent;font-weight:400}.lesson-boundary .boundary-contents:hover,.lesson-boundary .start-next-lesson:hover{background:transparent;text-decoration:underline}
+@media(min-width:600px){.mobile-workbook{padding-inline:28px}.lesson-stage{padding-top:18px}.screen-window svg{max-height:360px}.full-app-figure .screen-window svg{max-height:340px}}
+@media(max-width:375px){.mobile-workbook{padding-inline:18px}.mobile-controls{gap:8px}.mobile-controls button{font-size:14px}.mobile-lesson-heading h1{font-size:22px}}
+@media(max-height:700px){.mobile-lesson-heading{padding-top:15px}.screen-window svg{max-height:230px}.full-app-figure .screen-window svg{max-height:220px}.stage-video video{max-height:190px}}
+.full-app-figure .screen-window svg{height:340px;width:auto;max-width:100%;max-height:340px;border:0;border-radius:0;background:transparent}.stage-actions{border:0;padding-top:0}.stage-actions>.stage-open{min-height:48px}
+@media(max-height:700px){.full-app-figure .screen-window svg{height:220px;max-height:220px}}
+
+/* Phone readability and accessible touch targets. */
+.mobile-progress{font-size:14px}.mobile-progress button{font-size:14px;min-height:44px;min-width:44px}.mobile-lesson .settings button{font-size:16px;min-height:44px}.mobile-lesson .topnav a{font-size:16px}.stage-video summary{font-size:16px}.lesson-boundary .boundary-contents{font-size:16px}.start-next-lesson>span{font-size:14px}.mobile-lesson .settings button:hover,.stage-video summary:hover{color:var(--accent-deep);text-decoration:underline;text-underline-offset:.25em}.stage-actions>.stage-open:hover{color:var(--accent-deep);text-decoration:underline}.mobile-progress button:hover{color:var(--accent-deep)}
+@media(max-width:375px){.mobile-controls button{font-size:16px;white-space:normal}.stage-actions{flex-wrap:wrap}.stage-actions>button,.stage-actions>.button{white-space:normal;overflow-wrap:anywhere}}
+.mobile-lesson .topnav a{min-width:44px}
+/* Leave room for the demo link below a still preview on a portrait phone. */
+.demo-poster img{max-height:280px}
+@media(max-height:700px){.demo-poster img{max-height:190px}}
