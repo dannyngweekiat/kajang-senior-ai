@@ -9,6 +9,7 @@ window.GUIDE = {
     "用 ChatGPT 提问、看照片、做感谢图和日常计划，再用 Google Flow 手机网页让小猫动起来。",
     "Use ChatGPT for questions, photos, a thank-you picture and daily plans, then animate your cat with Google Flow in your phone browser."
   ],
+  "staticPages": true,
   "recordings": {
     "checked": "2026-11-14",
     "clips": {
