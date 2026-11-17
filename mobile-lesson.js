@@ -503,10 +503,260 @@ window.createMobileLesson = ({data, tx, t, esc, icon, announce, actionNames, ste
     ]
   ]
 };
+  // Two further activities per lesson, in the same reading list.
+  const additionalActivities={
+  "first": {
+    "seniors": [
+      [
+        "用现有食材做菜",
+        "Use what you have",
+        "说出三种食材，请 ChatGPT 建议一道家常菜，再补充自己有的厨具。",
+        "Name three ingredients and ask ChatGPT for a meal idea, then add which cooking equipment you have."
+      ],
+      [
+        "聊聊兴趣",
+        "Explore a hobby",
+        "选一个喜欢的兴趣，请它解释一个小知识，再追问一个例子。",
+        "Choose a hobby you enjoy, ask about one aspect of it, then ask for an example."
+      ]
+    ],
+    "hawkers": [
+      [
+        "补齐产品资料",
+        "Fill in the details",
+        "请 ChatGPT 问你三个介绍产品所需的问题，再逐一补充实际资料。",
+        "Ask ChatGPT for three questions that would help introduce your product, then answer with confirmed details."
+      ],
+      [
+        "缩短介绍",
+        "Shorten an introduction",
+        "把自己的摊位介绍缩成两句话，再请它改得更亲切。",
+        "Shorten your stall introduction to two sentences, then ask for a friendlier version."
+      ]
+    ]
+  },
+  "voice": {
+    "seniors": [
+      [
+        "口述购物清单",
+        "Dictate a shopping list",
+        "说出要买的物品和数量，请它整理成清单，再核对一次。",
+        "Say what you need to buy and the quantities, ask for a list and check it."
+      ],
+      [
+        "约好见面",
+        "Arrange a meeting",
+        "口述一条约朋友见面的信息，发送前核对日期、时间和地点。",
+        "Dictate a message arranging to meet a friend, checking the date, time and place before sending."
+      ]
+    ],
+    "hawkers": [
+      [
+        "口述营业通知",
+        "Dictate an opening notice",
+        "说出下周实际营业日和时间，请它整理成一条顾客通知。",
+        "Say next week’s confirmed opening days and hours and ask for a customer notice."
+      ],
+      [
+        "整理订购回复",
+        "Prepare an order reply",
+        "用虚构产品和数量口述一条订购回复，再检查辨识出的名字和数字，不输入顾客资料。",
+        "Dictate an order reply using fictional products and quantities. Check the names and numbers without entering customer details."
+      ]
+    ]
+  },
+  "business-copy": [
+    [
+      "想个标题",
+      "Try a headline",
+      "请它用已确认的产品资料写三个短标题，选出最清楚的一句。",
+      "Ask for three short headlines using confirmed product details, then choose the clearest."
+    ],
+    [
+      "说明怎样订购",
+      "Explain how to order",
+      "提供实际订购方式，请它整理成三个简单步骤，再检查有没有加入你没提供的要求。",
+      "Give your actual ordering method and ask for three simple steps. Check that no extra requirements were invented."
+    ]
+  ],
+  "poster": [
+    [
+      "外带海报",
+      "Plan a takeaway poster",
+      "用实际产品和包装资料，先写好一张外带海报的文字和版面要求。",
+      "Use confirmed product and packaging details to draft the wording and layout for a takeaway poster."
+    ],
+    [
+      "售罄通知",
+      "Plan a sold-out notice",
+      "先准备一张售罄通知的文字；要写下次营业时间时，使用已经确认的资料。",
+      "Draft the wording for a sold-out notice, using confirmed details if you include your next opening time."
+    ]
+  ],
+  "video": [
+    [
+      "预订提醒",
+      "Give an order deadline",
+      "把结尾的订购提醒换成实际预订截止日期，产品名称和价格保持正确。",
+      "Change the closing message to your actual pre-order deadline, keeping the product name and price accurate."
+    ],
+    [
+      "展示包装",
+      "Show the packaging",
+      "选一张产品和包装都清楚的照片，让镜头慢慢拉远，保留实际外观和数量。",
+      "Choose a clear photo of the product and packaging. Request a slow zoom out while preserving their appearance and quantity."
+    ]
+  ],
+  "social": [
+    [
+      "回答常见问题",
+      "Answer a common question",
+      "用已经确认的取货或订购资料，写一则回答顾客常见问题的帖文。",
+      "Use confirmed collection or ordering details to write a post answering a common customer question."
+    ],
+    [
+      "通知休息日",
+      "Announce a closure",
+      "写一则临时休息通知，核对休息日期和下次营业时间。",
+      "Write a temporary closure notice and check the closure date and next opening time."
+    ]
+  ],
+  "photo": [
+    [
+      "看懂使用说明",
+      "Read everyday instructions",
+      "拍一张日用品的使用说明，请它分成几步解释，再对照包装核对。",
+      "Photograph instructions on an everyday product. Ask for a few simple steps, then check them against the packaging."
+    ],
+    [
+      "把清单变成文字",
+      "Turn a list into text",
+      "拍一张不含私人资料的购物清单，请它整理成文字，再检查物品和数量。",
+      "Photograph a shopping list without private details. Ask for a typed version and check the items and quantities."
+    ]
+  ],
+  "greeting": [
+    [
+      "谢谢帮忙照顾花草",
+      "Thank someone for plant care",
+      "先准备一张感谢朋友帮忙浇花的图片提示词，写清楚感谢文字和喜欢的风格。",
+      "Draft a picture prompt thanking a friend for watering your plants, including your message and preferred style."
+    ],
+    [
+      "邀请一起吃饭",
+      "Invite people for a meal",
+      "先写好聚餐邀请图的文字和画面要求，核对日期、时间和地点。",
+      "Draft the wording and picture idea for a meal invitation, checking the date, time and place."
+    ]
+  ],
+  "flow-fun": [
+    [
+      "让小狗摇尾巴",
+      "Make a dog wag its tail",
+      "选一张小狗图片，只让尾巴轻轻摆动，保留原来的外貌和背景。",
+      "Choose a dog picture and request a gentle tail wag, keeping its appearance and background unchanged."
+    ],
+    [
+      "让蝴蝶动起来",
+      "Animate a butterfly",
+      "选一张蝴蝶图片，让翅膀轻轻开合，镜头保持不动。",
+      "Choose a butterfly picture and request gently opening and closing wings with a fixed camera."
+    ]
+  ],
+  "daily": [
+    [
+      "用完冰箱食材",
+      "Use fridge ingredients",
+      "说出冰箱里现有的食材，请它安排两顿饭，再按实际份量调整。",
+      "List the ingredients in your fridge and ask for two meals, then adjust the quantities to suit you."
+    ],
+    [
+      "准备朋友聚餐",
+      "Plan a shared meal",
+      "为四个人、总预算 RM80 的聚餐准备菜单和购物清单，购买前核对价格。",
+      "Plan a menu and shopping list for four people within RM80, checking shop prices before buying."
+    ]
+  ],
+  "safe": {
+    "seniors": [
+      [
+        "核实借钱请求",
+        "Check a request for money",
+        "用虚构的「朋友急着借钱」信息练习，想想怎样用熟悉的号码联系本人确认。",
+        "Practise with a fictional urgent request for money from a friend and decide how to verify it using a trusted number."
+      ],
+      [
+        "留意图片来源",
+        "Check a picture’s source",
+        "用虚构例子，请它列出查证转发图片的方法，再自己寻找可靠来源。",
+        "Use a fictional example to ask how to verify a forwarded picture, then look for reliable sources yourself."
+      ]
+    ],
+    "hawkers": [
+      [
+        "核实收款变更",
+        "Check changed payment details",
+        "用虚构的供应商更换收款账号通知练习，讨论如何通过原有可靠渠道核实，不输入真实账号。",
+        "Practise with a fictional supplier notice changing payment details. Discuss how to verify through an established trusted channel without entering real account details."
+      ],
+      [
+        "检查宣传依据",
+        "Check evidence for claims",
+        "用虚构文案找出需要证据的食材、过敏原和认证说法，没有确认的内容先删掉。",
+        "Review fictional copy for ingredient, allergen and certification claims that need evidence. Remove unconfirmed claims."
+      ]
+    ]
+  },
+  "avatar-setup": [
+    [
+      "确认使用的账号",
+      "Check your account",
+      "确认 Flow 登录的是自己打算使用的账号，密码和验证码由自己保管。",
+      "Check that Flow is signed in to the account you intend to use, keeping your password and codes private."
+    ],
+    [
+      "分清分身与短片",
+      "Find your avatar and clips",
+      "分别找到管理分身的位置和查看项目短片的位置，认识两者的用途。",
+      "Find where to manage your avatar and where to view project videos, and explore what each is for."
+    ]
+  ],
+  "avatar-video": {
+    "seniors": [
+      [
+        "送上生日祝福",
+        "Send birthday wishes",
+        "先准备一句简短生日祝福，用自己的分身说给亲友听，动作保持简单。",
+        "Draft a short birthday greeting for your avatar to say to family or friends, keeping the gesture simple."
+      ],
+      [
+        "邀请家人吃饭",
+        "Invite family for a meal",
+        "先准备一句聚餐邀请，核对时间和地点，再用简单背景制作短片。",
+        "Draft a meal invitation, check the time and place, then use a simple background for the clip."
+      ]
+    ],
+    "hawkers": [
+      [
+        "感谢顾客支持",
+        "Thank your customers",
+        "准备一句感谢支持的口播，不放入顾客姓名、电话或订单资料。",
+        "Prepare a short thank-you message without customer names, phone numbers or order details."
+      ],
+      [
+        "通知产品售罄",
+        "Announce a sold-out product",
+        "准备一句售罄通知；提到下次营业或预订时间时，使用实际资料。",
+        "Prepare a short sold-out notice, using confirmed details for your next opening or pre-order time."
+      ]
+    ]
+  }
+};
+  function endingActivities(){const labels=item.activities?item.activities.map(a=>a.title):relatedTitles[item.id],headings=Array.isArray(labels)?labels:labels[data.audience];const extra=additionalActivities[item.id],rows=Array.isArray(extra)?extra:extra[data.audience];return activityIdeas().map((body,i)=>({title:headings[i],body})).concat(rows.map(([zh,en,bzh,ben])=>({title:[zh,en],body:[bzh,ben]})));}
   const atEnd=()=>active===frames.length;
   const positionLabel=()=>atEnd()?tx(['本课结束','End of lesson']):tx(['步骤 ','Step '])+(active+1)+' / '+frames.length;
   const forwardState=()=>atEnd()?{label:['本课结束','Lesson end'],icon:'book',cls:'',disabled:true}:active===frames.length-1?{label:['看看还能做什么','More things to try'],icon:'book',cls:'review-lesson',disabled:false}:{label:['下一步','Next'],icon:'arrow',cls:'primary',disabled:false};
-  function boundaryHTML(){const next=data.lessons[data.lessons.indexOf(item)+1],labels=item.activities?item.activities.map(a=>a.title):relatedTitles[item.id],headings=Array.isArray(labels)?labels:labels[data.audience];return '<div class="lesson-boundary"><h2 id="frame-heading" tabindex="-1">'+tx(['还可以这样试试','Three more things to try'])+'</h2><ul class="similar-activities">'+activityIdeas().map((idea,i)=>'<li><h3>'+tx(headings[i])+'</h3><p>'+tx(idea)+'</p></li>').join('')+'</ul>'+(next?'<a class="button start-next-lesson" href="#lesson/'+esc(next.id)+'"><span>'+tx(['开始下一课','Start next lesson'])+'<strong>'+tx(next.title)+'</strong></span>'+icon('arrow')+'</a>':'')+'<a class="button boundary-contents" href="#contents">'+tx(['返回学习内容','Back to contents'])+'</a></div>';}
+  function boundaryHTML(){const next=data.lessons[data.lessons.indexOf(item)+1];return '<div class="lesson-boundary"><h2 id="frame-heading" tabindex="-1">'+tx(['还可以这样试试','Five more things to try'])+'</h2><ul class="similar-activities">'+endingActivities().map(a=>'<li><h3>'+tx(a.title)+'</h3><p>'+tx(a.body)+'</p></li>').join('')+'</ul>'+(next?'<a class="button start-next-lesson" href="#lesson/'+esc(next.id)+'"><span>'+tx(['开始下一课','Start next lesson'])+'<strong>'+tx(next.title)+'</strong></span>'+icon('arrow')+'</a>':'')+'<a class="button boundary-contents" href="#contents">'+tx(['返回学习内容','Back to contents'])+'</a></div>';}
   const stageHTML=()=>atEnd()?boundaryHTML():frameHTML(frames[active]);
   function render(id){item=data.lessons.find(l=>l.id===id);if(!item)return `<main id="main"><h1>${tx(['没有找到这页内容','This page could not be found'])}</h1><a href="#contents">${tx(['学习内容','Contents'])}</a></main>`;frames=framesFor(item);active=0;
     return `<main id="main" class="mobile-workbook" tabindex="-1"><header class="mobile-lesson-heading"><h1>${tx(item.title)}</h1><div class="mobile-progress"><span id="mobile-count">${positionLabel()}</span><button type="button" id="lesson-overview">${icon('list','small')}${tx(['全部步骤','All steps'])}</button></div></header><section id="lesson-stage" class="lesson-stage" aria-labelledby="frame-heading">${stageHTML()}</section><div class="mobile-controls"><button id="mobile-back" ${active===0?'disabled':''}>${icon('back','small')}${tx(['上一步','Back'])}</button><button id="mobile-next" class="${forwardState().cls}" ${forwardState().disabled?'disabled':''}>${tx(forwardState().label)}${icon(forwardState().icon,'small')}</button></div></main><dialog id="mobile-dialog" aria-labelledby="mobile-dialog-title"><header><h2 id="mobile-dialog-title"></h2><button type="button" id="close-mobile-dialog">${tx(['关闭','Close'])}${icon('close','small')}</button></header><div id="mobile-dialog-content"></div></dialog>`;
