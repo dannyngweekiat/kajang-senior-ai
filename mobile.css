@@ -110,3 +110,7 @@ body.mobile-lesson{height:100vh;height:100svh;display:flex;flex-direction:column
 /* Leave room for the demo link below a still preview on a portrait phone. */
 .demo-poster img{max-height:280px}
 @media(max-height:700px){.demo-poster img{max-height:190px}}
+
+/* Two course parts retain global lesson numbers. */
+.lesson-group{margin-top:34px}.lesson-group>h3{font-size:20px;line-height:1.4;margin:0 0 14px;color:var(--ink)}.lesson-group+.lesson-group{margin-top:48px}.lesson-copy .platform-label{font-size:14px;color:var(--muted)}.style-examples{display:grid;gap:20px}.style-examples .reference-figure{margin:0}.prepared-layout{background:#fff;text-align:center;padding:16px;border:1px solid var(--line);border-radius:12px}.prepared-layout strong{font-size:26px}.prepared-layout p{font-size:20px}.prepared-layout img{width:100%;height:auto}.style-examples img{max-height:300px;object-fit:contain;width:100%}
+.style-examples{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;align-items:start}.style-examples img{max-height:190px}.style-examples figcaption{font-size:14px;line-height:1.5}.style-examples .prepared-layout{padding:8px}.style-examples .prepared-layout strong{font-size:19px;line-height:1.4}.style-examples .prepared-layout p{font-size:16px;line-height:1.5;margin:8px 0}
